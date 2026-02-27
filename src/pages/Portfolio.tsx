@@ -11,18 +11,21 @@ const websiteProjects = [
     category: "E-commerce Website Design",
     results: ["+240% Conversions", "+180% Revenue", "3.2s → 1.1s Load Time"],
     color: "from-blue-500 to-indigo-600",
+    url: "https://trendfusion.com",
   },
   {
     title: "NovaTech SaaS",
     category: "Landing Page Design",
     results: ["+160% Signups", "38% Conversion Rate", "2x Lead Quality"],
     color: "from-violet-500 to-purple-600",
+    url: "https://novatech.io",
   },
   {
     title: "CloudSync Solutions",
     category: "Business Website Development",
     results: ["+300% Leads", "98% Uptime", "Professional Redesign"],
     color: "from-amber-500 to-orange-600",
+    url: "https://cloudsync.com",
   },
 ];
 
@@ -69,11 +72,12 @@ const Portfolio = () => {
           <SectionHeading badge="Website Projects" title="Websites That Convert" subtitle="Custom-built websites designed for performance and growth." />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {websiteProjects.map((project, i) => (
-              <div key={i} className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className={`h-48 bg-gradient-to-br ${project.color} flex items-center justify-center`}>
+              <a key={i} href={project.url} target="_blank" rel="noopener noreferrer" className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 block">
+                <div className={`h-48 bg-gradient-to-br ${project.color} flex items-center justify-center relative`}>
                   <span className="text-4xl font-extrabold text-white/20 group-hover:text-white/30 transition-colors">
                     {project.title.charAt(0)}
                   </span>
+                  <ExternalLink size={18} className="absolute top-4 right-4 text-white/40 group-hover:text-white/80 transition-colors" />
                 </div>
                 <div className="p-6">
                   <span className="text-xs font-semibold text-primary uppercase tracking-wider">{project.category}</span>
@@ -87,7 +91,7 @@ const Portfolio = () => {
                     ))}
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
