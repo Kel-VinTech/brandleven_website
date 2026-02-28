@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
 import CTASection from "@/components/CTASection";
+import PageHero from "@/components/PageHero";
 
 const allProjects: Record<string, {
   title: string;
@@ -101,26 +102,20 @@ const ProjectDetail = () => {
 
   return (
     <Layout>
-      {/* Hero */}
-      <section className={`pt-32 pb-16 md:pt-44 md:pb-24 bg-gradient-to-br ${project.color}`}>
-        <div className="container mx-auto px-4">
-          <Link to="/portfolio" className="inline-flex items-center gap-2 text-white/70 hover:text-white mb-8 transition-colors">
-            <ArrowLeft size={16} /> Back to Portfolio
-          </Link>
-          <ScrollReveal>
-            <span className="inline-block bg-white/15 text-white text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
-              {project.category}
-            </span>
-            <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-4">{project.title}</h1>
-            <p className="text-white/80 text-lg md:text-xl max-w-2xl mb-8">{project.description}</p>
-            <Button variant="cta-white" size="lg" asChild>
-              <a href={project.url} target="_blank" rel="noopener noreferrer">
-                Visit Live Website <ExternalLink size={16} />
-              </a>
-            </Button>
-          </ScrollReveal>
-        </div>
-      </section>
+      <PageHero
+        badge={project.category}
+        headline={<><span className="text-primary">{project.title}</span> — Case Study</>}
+        subtitle={project.description}
+        ctaText="Visit Live Website"
+        ctaLink={project.url}
+      />
+
+      {/* Back link */}
+      <div className="container mx-auto px-4 -mt-16 mb-8">
+        <Link to="/portfolio" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm">
+          <ArrowLeft size={16} /> Back to Portfolio
+        </Link>
+      </div>
 
       {/* Screenshot */}
       <section className="py-16 md:py-24">
