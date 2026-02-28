@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Zap } from "lucide-react";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -35,9 +35,14 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between h-16 md:h-20 px-4">
-        <Link to="/" className="text-2xl font-extrabold tracking-tight">
-          <span className="text-gradient">Brand</span>
-          <span className="text-foreground">leven</span>
+        <Link to="/" className="flex items-center gap-2 text-2xl font-extrabold tracking-tight">
+          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+            <Zap size={18} className="text-primary-foreground" />
+          </div>
+          <div>
+            <span className={isScrolled ? "text-gradient" : "text-primary-foreground"}>Brand</span>
+            <span className={isScrolled ? "text-foreground" : "text-primary-foreground/80"}>leven</span>
+          </div>
         </Link>
 
         {/* Desktop */}
@@ -46,12 +51,12 @@ const Navbar = () => {
             <Link
               key={link.path}
               to={link.path}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
+              className={`text-sm font-medium transition-colors ${
                 location.pathname === link.path
-                  ? "text-primary"
+                  ? isScrolled ? "text-primary" : "text-primary-foreground font-bold"
                   : isScrolled
-                    ? "text-muted-foreground"
-                    : "text-primary-foreground/90 hover:text-primary-foreground"
+                    ? "text-muted-foreground hover:text-primary"
+                    : "text-primary-foreground/70 hover:text-primary-foreground"
               }`}
             >
               {link.label}

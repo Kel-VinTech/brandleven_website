@@ -8,6 +8,7 @@ import {
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import CTASection from "@/components/CTASection";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const services = [
   { icon: Globe, title: "Website Design Agency", desc: "Stunning, conversion-optimized websites tailored to your brand." },
@@ -79,15 +80,17 @@ const Index = () => {
       {/* Services Overview */}
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
+          <ScrollReveal>
           <SectionHeading
             badge="What We Do"
             title="Services That Drive Growth"
             subtitle="From website design to paid advertising, we deliver end-to-end digital solutions that generate leads and revenue."
           />
+          </ScrollReveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {services.map((service, i) => (
+              <ScrollReveal key={i} delay={i * 0.05}>
               <div
-                key={i}
                 className="group bg-card border border-border rounded-xl p-6 hover:shadow-lg hover:border-primary/30 transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="w-12 h-12 rounded-lg bg-accent flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
@@ -96,6 +99,7 @@ const Index = () => {
                 <h3 className="text-lg font-bold mb-2">{service.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{service.desc}</p>
               </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -111,10 +115,12 @@ const Index = () => {
           />
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {results.map((stat, i) => (
-              <div key={i} className="text-center p-6 bg-card rounded-xl border border-border animate-count-up" style={{ animationDelay: `${i * 100}ms` }}>
+              <ScrollReveal key={i} delay={i * 0.1}>
+              <div className="text-center p-6 bg-card rounded-xl border border-border">
                 <div className="text-4xl md:text-5xl font-extrabold text-primary mb-2">{stat.value}</div>
                 <div className="text-muted-foreground text-sm font-medium">{stat.label}</div>
               </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -130,7 +136,8 @@ const Index = () => {
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {testimonials.map((t, i) => (
-              <div key={i} className="bg-card border border-border rounded-xl p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col">
+              <ScrollReveal key={i} delay={i * 0.1}>
+              <div className="bg-card border border-border rounded-xl p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, j) => (
                     <Star key={j} size={16} className="fill-primary text-primary" />
@@ -142,6 +149,7 @@ const Index = () => {
                   <div className="text-muted-foreground text-sm">{t.role}</div>
                 </div>
               </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
