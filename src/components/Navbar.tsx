@@ -40,8 +40,8 @@ const Navbar = () => {
             <Zap size={18} className="text-primary-foreground" />
           </div>
           <div>
-            <span className={isScrolled ? "text-gradient" : "text-primary-foreground"}>Brand</span>
-            <span className={isScrolled ? "text-foreground" : "text-primary-foreground/80"}>leven</span>
+            <span className="text-gradient">Brand</span>
+            <span className="text-foreground">leven</span>
           </div>
         </Link>
 
@@ -53,10 +53,8 @@ const Navbar = () => {
               to={link.path}
               className={`text-sm font-medium transition-colors ${
                 location.pathname === link.path
-                  ? isScrolled ? "text-primary" : "text-primary-foreground font-bold"
-                  : isScrolled
-                    ? "text-muted-foreground hover:text-primary"
-                    : "text-primary-foreground/70 hover:text-primary-foreground"
+                  ? "text-primary font-bold"
+                  : "text-muted-foreground hover:text-primary"
               }`}
             >
               {link.label}
