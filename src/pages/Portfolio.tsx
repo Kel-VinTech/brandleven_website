@@ -4,6 +4,7 @@ import { TrendingUp, ArrowRight, ExternalLink } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import CTASection from "@/components/CTASection";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const websiteProjects = [
   {
@@ -11,21 +12,24 @@ const websiteProjects = [
     category: "E-commerce Website Design",
     results: ["+240% Conversions", "+180% Revenue", "3.2s → 1.1s Load Time"],
     color: "from-blue-500 to-indigo-600",
-    url: "https://trendfusion.com",
+    slug: "trendfusion-ecommerce",
+    screenshot: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80",
   },
   {
     title: "NovaTech SaaS",
     category: "Landing Page Design",
     results: ["+160% Signups", "38% Conversion Rate", "2x Lead Quality"],
     color: "from-violet-500 to-purple-600",
-    url: "https://novatech.io",
+    slug: "novatech-saas",
+    screenshot: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80",
   },
   {
     title: "CloudSync Solutions",
     category: "Business Website Development",
     results: ["+300% Leads", "98% Uptime", "Professional Redesign"],
     color: "from-amber-500 to-orange-600",
-    url: "https://cloudsync.com",
+    slug: "cloudsync-solutions",
+    screenshot: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80",
   },
 ];
 
@@ -55,15 +59,17 @@ const Portfolio = () => {
     <Layout>
       <section className="hero-gradient pt-32 pb-16 md:pt-44 md:pb-24">
         <div className="container mx-auto px-4 text-center">
-          <span className="inline-block bg-primary-foreground/15 text-primary-foreground text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
-            Portfolio
-          </span>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-6 max-w-3xl mx-auto">
-            Real Results for Real Businesses
-          </h1>
-          <p className="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto">
-            Explore our case studies showcasing measurable growth in conversions, revenue, and ad performance.
-          </p>
+          <ScrollReveal>
+            <span className="inline-block bg-primary-foreground/15 text-primary-foreground text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
+              Portfolio
+            </span>
+            <h1 className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-6 max-w-3xl mx-auto">
+              Real Results for Real Businesses
+            </h1>
+            <p className="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto">
+              Explore our case studies showcasing measurable growth in conversions, revenue, and ad performance.
+            </p>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -72,26 +78,30 @@ const Portfolio = () => {
           <SectionHeading badge="Website Projects" title="Websites That Convert" subtitle="Custom-built websites designed for performance and growth." />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {websiteProjects.map((project, i) => (
-              <a key={i} href={project.url} target="_blank" rel="noopener noreferrer" className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 block">
-                <div className={`h-48 bg-gradient-to-br ${project.color} flex items-center justify-center relative`}>
-                  <span className="text-4xl font-extrabold text-white/20 group-hover:text-white/30 transition-colors">
-                    {project.title.charAt(0)}
-                  </span>
-                  <ExternalLink size={18} className="absolute top-4 right-4 text-white/40 group-hover:text-white/80 transition-colors" />
-                </div>
-                <div className="p-6">
-                  <span className="text-xs font-semibold text-primary uppercase tracking-wider">{project.category}</span>
-                  <h3 className="text-xl font-bold mt-2 mb-4">{project.title}</h3>
-                  <div className="space-y-2">
-                    {project.results.map((result, j) => (
-                      <div key={j} className="flex items-center gap-2 text-sm">
-                        <TrendingUp size={14} className="text-primary shrink-0" />
-                        <span className="text-muted-foreground">{result}</span>
-                      </div>
-                    ))}
+              <ScrollReveal key={i} delay={i * 0.1}>
+                <Link to={`/portfolio/${project.slug}`} className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 block">
+                  <div className="h-48 overflow-hidden relative">
+                    <img src={project.screenshot} alt={`${project.title} screenshot`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-30`} />
+                    <ArrowRight size={18} className="absolute top-4 right-4 text-white/60 group-hover:text-white transition-colors" />
                   </div>
-                </div>
-              </a>
+                  <div className="p-6">
+                    <span className="text-xs font-semibold text-primary uppercase tracking-wider">{project.category}</span>
+                    <h3 className="text-xl font-bold mt-2 mb-4">{project.title}</h3>
+                    <div className="space-y-2">
+                      {project.results.map((result, j) => (
+                        <div key={j} className="flex items-center gap-2 text-sm">
+                          <TrendingUp size={14} className="text-primary shrink-0" />
+                          <span className="text-muted-foreground">{result}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <span className="inline-flex items-center gap-1 mt-4 text-sm font-medium text-primary group-hover:underline">
+                      View Case Study <ArrowRight size={14} />
+                    </span>
+                  </div>
+                </Link>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -102,25 +112,27 @@ const Portfolio = () => {
           <SectionHeading badge="Ad Campaigns" title="Ads That Drive Sales" subtitle="Data-driven ad campaigns across Facebook, Instagram, and TikTok." />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {adsProjects.map((project, i) => (
-              <div key={i} className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className={`h-48 bg-gradient-to-br ${project.color} flex items-center justify-center`}>
-                  <span className="text-4xl font-extrabold text-white/20 group-hover:text-white/30 transition-colors">
-                    {project.title.charAt(0)}
-                  </span>
-                </div>
-                <div className="p-6">
-                  <span className="text-xs font-semibold text-primary uppercase tracking-wider">{project.category}</span>
-                  <h3 className="text-xl font-bold mt-2 mb-4">{project.title}</h3>
-                  <div className="space-y-2">
-                    {project.results.map((result, j) => (
-                      <div key={j} className="flex items-center gap-2 text-sm">
-                        <TrendingUp size={14} className="text-primary shrink-0" />
-                        <span className="text-muted-foreground">{result}</span>
-                      </div>
-                    ))}
+              <ScrollReveal key={i} delay={i * 0.1}>
+                <div className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <div className={`h-48 bg-gradient-to-br ${project.color} flex items-center justify-center`}>
+                    <span className="text-4xl font-extrabold text-white/20 group-hover:text-white/30 transition-colors">
+                      {project.title.charAt(0)}
+                    </span>
+                  </div>
+                  <div className="p-6">
+                    <span className="text-xs font-semibold text-primary uppercase tracking-wider">{project.category}</span>
+                    <h3 className="text-xl font-bold mt-2 mb-4">{project.title}</h3>
+                    <div className="space-y-2">
+                      {project.results.map((result, j) => (
+                        <div key={j} className="flex items-center gap-2 text-sm">
+                          <TrendingUp size={14} className="text-primary shrink-0" />
+                          <span className="text-muted-foreground">{result}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
