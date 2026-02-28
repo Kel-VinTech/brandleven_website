@@ -11,6 +11,7 @@ const Footer = () => {
             <h3 className="text-2xl font-extrabold mb-4">
               <span className="text-primary">Brand</span>leven
             </h3>
+
             <p className="text-background/70 text-sm leading-relaxed">
               We build high-converting websites and run data-driven ad campaigns that deliver measurable results.
             </p>
