@@ -2,6 +2,7 @@ import { CheckCircle, Target, TrendingUp, Globe, Users, Lightbulb } from "lucide
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import CTASection from "@/components/CTASection";
+import PageHero from "@/components/PageHero";
 
 const values = [
   { icon: Target, title: "Results-Driven", desc: "Every strategy is designed to deliver measurable outcomes and real business growth." },
@@ -13,20 +14,13 @@ const values = [
 const About = () => {
   return (
     <Layout>
-      {/* Hero */}
-      <section className="hero-gradient pt-32 pb-16 md:pt-44 md:pb-24">
-        <div className="container mx-auto px-4 text-center">
-          <span className="inline-block bg-primary-foreground/15 text-primary-foreground text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
-            About Us
-          </span>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-6 max-w-3xl mx-auto">
-            Your Growth Partner in the Digital World
-          </h1>
-          <p className="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto">
-            We're a remote-first digital agency helping businesses worldwide grow through strategic websites and targeted advertising.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        badge="About Us"
+        headline={<>Built to Help <span className="text-primary">Ambitious Brands</span> Grow.</>}
+        subtitle="We're a remote-first digital agency helping businesses worldwide grow through strategic websites and targeted advertising."
+        ctaText="Work With Us"
+        secondaryCtaText="View Our Work"
+      />
 
       {/* Who We Are */}
       <section className="py-20 md:py-28">

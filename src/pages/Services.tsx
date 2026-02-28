@@ -7,6 +7,7 @@ import {
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import CTASection from "@/components/CTASection";
+import PageHero from "@/components/PageHero";
 
 const webServices = [
   { icon: Globe, title: "Business Website Development", desc: "Custom websites built to represent your brand and generate leads 24/7." },
@@ -37,19 +38,13 @@ const ServiceCard = ({ icon: Icon, title, desc }: { icon: any; title: string; de
 const Services = () => {
   return (
     <Layout>
-      <section className="hero-gradient pt-32 pb-16 md:pt-44 md:pb-24">
-        <div className="container mx-auto px-4 text-center">
-          <span className="inline-block bg-primary-foreground/15 text-primary-foreground text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
-            Our Services
-          </span>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-6 max-w-3xl mx-auto">
-            Digital Solutions That Deliver Results
-          </h1>
-          <p className="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto">
-            From professional website development to performance marketing, we cover every aspect of your digital growth.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        badge="Our Services"
+        headline={<>Strategic <span className="text-primary">Digital Solutions</span> That Scale.</>}
+        subtitle="From professional website development to performance marketing, we cover every aspect of your digital growth."
+        ctaText="Get Started Today"
+        secondaryCtaText="View Our Work"
+      />
 
       {/* Web Services */}
       <section className="py-20 md:py-28">

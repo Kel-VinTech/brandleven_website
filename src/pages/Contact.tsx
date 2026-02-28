@@ -6,6 +6,7 @@ import { Mail, Phone, MapPin, Send, Globe } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
+import PageHero from "@/components/PageHero";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -26,19 +27,11 @@ const Contact = () => {
 
   return (
     <Layout>
-      <section className="hero-gradient pt-32 pb-16 md:pt-44 md:pb-24">
-        <div className="container mx-auto px-4 text-center">
-          <span className="inline-block bg-primary-foreground/15 text-primary-foreground text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
-            Contact Us
-          </span>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-6 max-w-3xl mx-auto">
-            Book a Free Strategy Call
-          </h1>
-          <p className="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto">
-            Ready to grow your business? Get in touch and let's discuss your goals.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        badge="Contact"
+        headline={<>Let's Build Something <span className="text-primary">Exceptional.</span></>}
+        subtitle="Ready to grow your business? Get in touch and let's discuss your goals."
+      />
 
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">

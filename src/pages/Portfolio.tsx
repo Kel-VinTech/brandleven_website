@@ -5,6 +5,7 @@ import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import CTASection from "@/components/CTASection";
 import ScrollReveal from "@/components/ScrollReveal";
+import PageHero from "@/components/PageHero";
 
 const websiteProjects = [
   {
@@ -57,21 +58,12 @@ const adsProjects = [
 const Portfolio = () => {
   return (
     <Layout>
-      <section className="hero-gradient pt-32 pb-16 md:pt-44 md:pb-24">
-        <div className="container mx-auto px-4 text-center">
-          <ScrollReveal>
-            <span className="inline-block bg-primary-foreground/15 text-primary-foreground text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
-              Portfolio
-            </span>
-            <h1 className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-6 max-w-3xl mx-auto">
-              Real Results for Real Businesses
-            </h1>
-            <p className="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto">
-              Explore our case studies showcasing measurable growth in conversions, revenue, and ad performance.
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
+      <PageHero
+        badge="Portfolio"
+        headline={<><span className="text-primary">Real Results.</span> Real Growth.</>}
+        subtitle="Explore our case studies showcasing measurable growth in conversions, revenue, and ad performance."
+        ctaText="Start Your Project"
+      />
 
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
