@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook } from "lucide-react";
-import { Zap } from "lucide-react";
 
 const TikTokIcon = ({ size = 16 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -22,12 +20,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
-            <Link to="/" className="flex items-center gap-2 text-2xl font-extrabold mb-4">
-              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                <Zap size={18} className="text-primary-foreground" />
-              </div>
+            <a href="/" className="flex items-center gap-2 text-2xl font-extrabold mb-4">
+              <img src="/images/logo-icon.png" alt="Brandleven logo" className="w-8 h-8 rounded-lg" />
               <span className="text-primary">Brandleven</span>
-            </Link>
+            </a>
             <p className="text-background/70 text-sm leading-relaxed">
               We build high-converting websites and run data-driven ad campaigns that deliver measurable results.
             </p>
@@ -39,12 +35,12 @@ const Footer = () => {
             <ul className="space-y-2">
               {["Home", "About", "Services", "Portfolio", "Contact"].map((item) => (
                 <li key={item}>
-                  <Link
-                    to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                  <a
+                    href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
                     className="text-background/70 text-sm hover:text-primary transition-colors"
                   >
                     {item}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>

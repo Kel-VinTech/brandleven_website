@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { ArrowLeft, ExternalLink, Target, Lightbulb, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
@@ -160,7 +160,7 @@ const ProjectDetail = () => {
       <Layout>
         <div className="pt-32 pb-20 text-center">
           <h1 className="text-3xl font-bold mb-4">Project Not Found</h1>
-          <Button asChild><Link to="/portfolio">Back to Portfolio</Link></Button>
+          <Button asChild><a href="/portfolio">Back to Portfolio</a></Button>
         </div>
       </Layout>
     );
@@ -178,9 +178,9 @@ const ProjectDetail = () => {
 
       {/* Back link */}
       <div className="container mx-auto px-4 mb-8">
-        <Link to="/portfolio" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm">
+        <a href="/portfolio" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm">
           <ArrowLeft size={16} /> Back to Portfolio
-        </Link>
+        </a>
       </div>
 
       {/* Screenshot */}
@@ -198,7 +198,6 @@ const ProjectDetail = () => {
       <section className="pb-20 md:pb-28">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Client Goals */}
             <ScrollReveal>
               <div className="bg-card border border-border rounded-xl p-8 h-full">
                 <div className="w-12 h-12 rounded-lg bg-accent flex items-center justify-center mb-4">
@@ -216,7 +215,6 @@ const ProjectDetail = () => {
               </div>
             </ScrollReveal>
 
-            {/* What We Did */}
             <ScrollReveal delay={0.1}>
               <div className="bg-card border border-border rounded-xl p-8 h-full">
                 <div className="w-12 h-12 rounded-lg bg-accent flex items-center justify-center mb-4">
@@ -234,7 +232,6 @@ const ProjectDetail = () => {
               </div>
             </ScrollReveal>
 
-            {/* Results */}
             <ScrollReveal delay={0.2}>
               <div className="bg-card border border-border rounded-xl p-8 h-full">
                 <div className="w-12 h-12 rounded-lg bg-accent flex items-center justify-center mb-4">

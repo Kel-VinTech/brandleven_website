@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Zap, Instagram, Linkedin, Facebook } from "lucide-react";
+import { Menu, X, Instagram, Linkedin, Facebook } from "lucide-react";
 
 const TikTokIcon = ({ size = 14 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -48,22 +48,20 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between h-16 md:h-20 px-4">
-        <Link to="/" className="flex items-center gap-2 text-2xl font-extrabold tracking-tight">
-          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-            <Zap size={18} className="text-primary-foreground" />
-          </div>
+        <a href="/" className="flex items-center gap-2 text-2xl font-extrabold tracking-tight">
+          <img src="/images/logo-icon.png" alt="Brandleven logo" className="w-8 h-8 rounded-lg" />
           <div>
             <span className="text-gradient">Brand</span>
             <span className="text-foreground">leven</span>
           </div>
-        </Link>
+        </a>
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link
+            <a
               key={link.path}
-              to={link.path}
+              href={link.path}
               className={`text-sm font-medium transition-colors ${
                 location.pathname === link.path
                   ? "text-primary font-bold"
@@ -71,7 +69,7 @@ const Navbar = () => {
               }`}
             >
               {link.label}
-            </Link>
+            </a>
           ))}
           <div className="flex items-center gap-3 border-l border-border pl-4">
             {headerSocials.map(({ icon: Icon, href, label }) => (
@@ -88,7 +86,7 @@ const Navbar = () => {
             ))}
           </div>
           <Button variant="cta" size="sm" asChild>
-            <Link to="/contact">Get a Free Consultation</Link>
+            <a href="/contact">Get a Free Consultation</a>
           </Button>
         </div>
 
@@ -107,9 +105,9 @@ const Navbar = () => {
         <div className="md:hidden bg-background border-t border-border shadow-lg animate-fade-in">
           <div className="container mx-auto px-4 py-4 flex flex-col gap-3">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.path}
-                to={link.path}
+                href={link.path}
                 className={`text-base font-medium py-2 transition-colors ${
                   location.pathname === link.path
                     ? "text-primary"
@@ -117,10 +115,10 @@ const Navbar = () => {
                 }`}
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
             <Button variant="cta" asChild className="mt-2">
-              <Link to="/contact">Get a Free Consultation</Link>
+              <a href="/contact">Get a Free Consultation</a>
             </Button>
           </div>
         </div>

@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { TrendingUp, ArrowRight, ExternalLink } from "lucide-react";
+import { TrendingUp, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import CTASection from "@/components/CTASection";
@@ -95,7 +93,7 @@ const Portfolio = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {websiteProjects.map((project, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
-                <Link to={`/portfolio/${project.slug}`} className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 block">
+                <a href={`/portfolio/${project.slug}`} className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 block">
                   <div className="h-48 overflow-hidden relative">
                     <img src={project.screenshot} alt={`${project.title} screenshot`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                     <div className={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-30`} />
@@ -116,7 +114,7 @@ const Portfolio = () => {
                       View Case Study <ArrowRight size={14} />
                     </span>
                   </div>
-                </Link>
+                </a>
               </ScrollReveal>
             ))}
           </div>
