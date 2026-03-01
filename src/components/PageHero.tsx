@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
@@ -51,12 +50,12 @@ const PageHero = ({
           <div className="flex items-center justify-center gap-4 flex-wrap">
             {ctaText && (
               <Button variant="cta" size="lg" asChild className="px-8 py-6 text-base">
-                <Link to={ctaLink}>{ctaText} <ArrowRight size={18} /></Link>
+                <a href={ctaLink}>{ctaText} <ArrowRight size={18} /></a>
               </Button>
             )}
             {secondaryCtaText && (
               <Button variant="ghost" size="lg" asChild className="text-muted-foreground hover:text-primary text-base">
-                <Link to={secondaryCtaLink}>{secondaryCtaText}</Link>
+                <a href={secondaryCtaLink}>{secondaryCtaText}</a>
               </Button>
             )}
           </div>

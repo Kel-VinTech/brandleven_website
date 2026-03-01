@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, Mail, Globe } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -27,9 +26,9 @@ const CTASection = ({
             {subtitle}
           </p>
           <Button variant="cta-white" size="lg" asChild className="text-base px-8 py-6">
-            <Link to={buttonLink}>
+            <a href={buttonLink}>
               {buttonText} <ArrowRight size={18} />
-            </Link>
+            </a>
           </Button>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6 text-primary-foreground/70 text-sm">
             <a href="tel:07013832571" className="flex items-center gap-2 hover:text-primary-foreground transition-colors">

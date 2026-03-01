@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   Globe, ShoppingCart, MousePointerClick, RefreshCw, Search,
@@ -46,7 +45,6 @@ const Services = () => {
         secondaryCtaText="View Our Work"
       />
 
-      {/* Web Services */}
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
           <SectionHeading badge="Website Services" title="Websites Built to Convert" subtitle="Every website we build is optimized for lead generation, conversion rate optimization, and sustainable sales growth." />
@@ -56,7 +54,6 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Ad Services */}
       <section className="section-alt py-20 md:py-28">
         <div className="container mx-auto px-4">
           <SectionHeading badge="Digital Marketing" title="Ads That Drive Revenue" subtitle="Targeted campaigns across Facebook, Instagram, and TikTok — all focused on measurable ROI and data optimization." />
@@ -65,7 +62,7 @@ const Services = () => {
           </div>
           <div className="text-center mt-12">
             <Button variant="cta" size="lg" asChild className="px-8 py-6 text-base">
-              <Link to="/contact">Get Started Today <ArrowRight size={18} /></Link>
+              <a href="/contact">Get Started Today <ArrowRight size={18} /></a>
             </Button>
           </div>
         </div>

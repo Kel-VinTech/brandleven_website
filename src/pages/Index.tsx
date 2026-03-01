@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   Globe, Megaphone, TrendingUp, BarChart3, Users, Star,
@@ -95,9 +94,7 @@ const Index = () => {
     <Layout>
       {/* Hero — Premium Agency Style */}
       <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden bg-background">
-        {/* Subtle grid background */}
         <div className="absolute inset-0 hero-grid opacity-[0.035]" />
-        {/* Abstract accent shapes */}
         <div className="absolute top-20 -right-32 w-[500px] h-[500px] rounded-full bg-primary/5 blur-3xl" />
         <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full bg-primary/5 blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full border border-primary/[0.06]" />
@@ -105,7 +102,6 @@ const Index = () => {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left — Copy */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -125,13 +121,12 @@ const Index = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="cta" size="lg" asChild className="text-base px-8 py-6">
-                  <Link to="/contact">Book a Free Strategy Call <ArrowRight size={18} /></Link>
+                  <a href="/contact">Book a Free Strategy Call <ArrowRight size={18} /></a>
                 </Button>
                 <Button variant="outline" size="lg" asChild className="text-base px-8 py-6">
-                  <Link to="/portfolio">View Our Work</Link>
+                  <a href="/portfolio">View Our Work</a>
                 </Button>
               </div>
-              {/* Social proof */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -155,7 +150,6 @@ const Index = () => {
               className="hidden lg:block"
             >
               <div className="relative">
-                {/* Main card */}
                 <div className="bg-card border border-border rounded-2xl shadow-2xl p-8 relative z-10">
                   <div className="flex items-center gap-2 mb-6">
                     <div className="w-3 h-3 rounded-full bg-destructive/60" />
@@ -176,7 +170,6 @@ const Index = () => {
                     </div>
                   </div>
                 </div>
-                {/* Floating stat card */}
                 <motion.div
                   animate={{ y: [0, -8, 0] }}
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
@@ -185,7 +178,6 @@ const Index = () => {
                   <div className="text-xs text-muted-foreground mb-1">Conversions</div>
                   <div className="text-2xl font-extrabold text-primary">+240%</div>
                 </motion.div>
-                {/* Floating ROAS card */}
                 <motion.div
                   animate={{ y: [0, 6, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -204,11 +196,7 @@ const Index = () => {
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
           <ScrollReveal>
-            <SectionHeading
-              badge="What We Do"
-              title="Services That Drive Growth"
-              subtitle="From website design to paid advertising, we deliver end-to-end digital solutions that generate leads and revenue."
-            />
+            <SectionHeading badge="What We Do" title="Services That Drive Growth" subtitle="From website design to paid advertising, we deliver end-to-end digital solutions that generate leads and revenue." />
           </ScrollReveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {services.map((service, i) => (
@@ -230,17 +218,12 @@ const Index = () => {
       <section className="section-alt py-20 md:py-28">
         <div className="container mx-auto px-4">
           <ScrollReveal>
-            <SectionHeading
-              badge="Our Process"
-              title="Our 4-Step Growth System"
-              subtitle="A proven framework that transforms your digital presence into a revenue engine."
-            />
+            <SectionHeading badge="Our Process" title="Our 4-Step Growth System" subtitle="A proven framework that transforms your digital presence into a revenue engine." />
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {growthSteps.map((step, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
                 <div className="relative text-center group">
-                  {/* Connector line */}
                   {i < growthSteps.length - 1 && (
                     <div className="hidden lg:block absolute top-8 left-[60%] w-[80%] h-px bg-border" />
                   )}
@@ -261,11 +244,7 @@ const Index = () => {
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
           <ScrollReveal>
-            <SectionHeading
-              badge="Proven Results"
-              title="Numbers That Speak for Themselves"
-              subtitle="Our data-driven approach consistently delivers measurable results for businesses worldwide."
-            />
+            <SectionHeading badge="Proven Results" title="Numbers That Speak for Themselves" subtitle="Our data-driven approach consistently delivers measurable results for businesses worldwide." />
           </ScrollReveal>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {results.map((stat, i) => (
@@ -284,11 +263,7 @@ const Index = () => {
       <section className="section-alt py-20 md:py-28">
         <div className="container mx-auto px-4">
           <ScrollReveal>
-            <SectionHeading
-              badge="Why Us"
-              title="Why Brands Choose Brandleven"
-              subtitle="We combine creative excellence with analytical rigor to deliver results that matter."
-            />
+            <SectionHeading badge="Why Us" title="Why Brands Choose Brandleven" subtitle="We combine creative excellence with analytical rigor to deliver results that matter." />
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {whyUs.map((item, i) => (
@@ -310,11 +285,7 @@ const Index = () => {
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
           <ScrollReveal>
-            <SectionHeading
-              badge="Testimonials"
-              title="What Our Clients Say"
-              subtitle="Don't just take our word for it — hear from businesses we've helped grow."
-            />
+            <SectionHeading badge="Testimonials" title="What Our Clients Say" subtitle="Don't just take our word for it — hear from businesses we've helped grow." />
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {testimonials.map((t, i) => (
