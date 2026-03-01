@@ -35,8 +35,8 @@ const CTASection = ({
             <a href="tel:07013832571" className="flex items-center gap-2 hover:text-primary-foreground transition-colors">
               <Phone size={14} /> 07013832571
             </a>
-            <a href="mailto:info.kelvinleven@gmail.com" className="flex items-center gap-2 hover:text-primary-foreground transition-colors">
-              <Mail size={14} /> info.kelvinleven@gmail.com
+            <a href="mailto:contactbrandleven@gmail.com" className="flex items-center gap-2 hover:text-primary-foreground transition-colors">
+              <Mail size={14} /> contactbrandleven@gmail.com
             </a>
             <span className="flex items-center gap-2">
               <Globe size={14} /> Remote — Serving Clients Worldwide

@@ -1,7 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X, Zap, Instagram, Linkedin, Facebook } from "lucide-react";
+
+const TikTokIcon = ({ size = 14 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+  </svg>
+);
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -9,6 +15,13 @@ const navLinks = [
   { label: "Services", path: "/services" },
   { label: "Portfolio", path: "/portfolio" },
   { label: "Contact", path: "/contact" },
+];
+
+const headerSocials = [
+  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Facebook, href: "#", label: "Facebook" },
+  { icon: TikTokIcon, href: "#", label: "TikTok" },
 ];
 
 const Navbar = () => {
@@ -60,6 +73,20 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
+          <div className="flex items-center gap-3 border-l border-border pl-4">
+            {headerSocials.map(({ icon: Icon, href, label }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                <Icon size={15} />
+              </a>
+            ))}
+          </div>
           <Button variant="cta" size="sm" asChild>
             <Link to="/contact">Get a Free Consultation</Link>
           </Button>

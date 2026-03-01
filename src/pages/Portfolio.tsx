@@ -32,6 +32,30 @@ const websiteProjects = [
     slug: "cloudsync-solutions",
     screenshot: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80",
   },
+  {
+    title: "Meridian Finance",
+    category: "Corporate Website Design",
+    results: ["+200% Lead Gen", "4.5s → 1.3s Load", "50% Lower Bounce"],
+    color: "from-teal-500 to-emerald-600",
+    slug: "meridian-finance",
+    screenshot: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80",
+  },
+  {
+    title: "Bloom Beauty",
+    category: "E-commerce Website Design",
+    results: ["+320% Sales", "45% Repeat Buyers", "2.8x AOV Increase"],
+    color: "from-pink-500 to-rose-600",
+    slug: "bloom-beauty",
+    screenshot: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80",
+  },
+  {
+    title: "Atlas Logistics",
+    category: "Business Web Application",
+    results: ["+180% Efficiency", "Real-time Tracking", "40% Cost Reduction"],
+    color: "from-sky-500 to-blue-600",
+    slug: "atlas-logistics",
+    screenshot: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80",
+  },
 ];
 
 const adsProjects = [
