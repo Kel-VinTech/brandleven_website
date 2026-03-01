@@ -83,6 +83,72 @@ const allProjects: Record<string, {
     ],
     results: ["+300% Leads", "98% Uptime", "Professional Redesign"],
   },
+  "meridian-finance": {
+    title: "Meridian Finance",
+    category: "Corporate Website Design",
+    color: "from-teal-500 to-emerald-600",
+    url: "https://meridianfinance.com",
+    screenshot: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80",
+    description: "Meridian Finance needed a modern corporate website that conveys trust and generates high-quality leads from enterprise clients.",
+    clientGoals: [
+      "Establish a premium digital presence",
+      "Generate qualified B2B leads",
+      "Reduce page load times significantly",
+      "Lower bounce rate across key pages",
+    ],
+    whatWeDid: [
+      "Redesigned the entire corporate site with a trust-first approach",
+      "Built custom lead capture funnels with CRM integration",
+      "Optimized Core Web Vitals for SEO performance",
+      "Created detailed service and team pages",
+      "Implemented analytics and conversion tracking",
+    ],
+    results: ["+200% Lead Gen", "4.5s → 1.3s Load", "50% Lower Bounce"],
+  },
+  "bloom-beauty": {
+    title: "Bloom Beauty",
+    category: "E-commerce Website Design",
+    color: "from-pink-500 to-rose-600",
+    url: "https://bloombeauty.com",
+    screenshot: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=1200&q=80",
+    description: "Bloom Beauty required a visually stunning e-commerce store that reflects their brand identity and maximizes conversions.",
+    clientGoals: [
+      "Increase online sales and repeat purchases",
+      "Create a luxury shopping experience",
+      "Boost average order value",
+      "Build a loyal customer base",
+    ],
+    whatWeDid: [
+      "Designed a premium storefront with lifestyle photography",
+      "Built product bundles and upsell flows",
+      "Implemented loyalty rewards and referral system",
+      "Optimized checkout for mobile conversions",
+      "Set up email marketing automations",
+    ],
+    results: ["+320% Sales", "45% Repeat Buyers", "2.8x AOV Increase"],
+  },
+  "atlas-logistics": {
+    title: "Atlas Logistics",
+    category: "Business Web Application",
+    color: "from-sky-500 to-blue-600",
+    url: "https://atlaslogistics.com",
+    screenshot: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80",
+    description: "Atlas Logistics needed a web application to streamline their operations and provide real-time tracking for clients.",
+    clientGoals: [
+      "Digitize manual logistics workflows",
+      "Enable real-time shipment tracking",
+      "Reduce operational costs",
+      "Improve client communication",
+    ],
+    whatWeDid: [
+      "Built a custom web application with real-time dashboards",
+      "Integrated GPS tracking and notification systems",
+      "Created client portal for shipment visibility",
+      "Automated reporting and invoicing workflows",
+      "Deployed on scalable cloud infrastructure",
+    ],
+    results: ["+180% Efficiency", "Real-time Tracking", "40% Cost Reduction"],
+  },
 };
 
 const ProjectDetail = () => {
@@ -111,7 +177,7 @@ const ProjectDetail = () => {
       />
 
       {/* Back link */}
-      <div className="container mx-auto px-4 -mt-16 mb-8">
+      <div className="container mx-auto px-4 mb-8">
         <Link to="/portfolio" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm">
           <ArrowLeft size={16} /> Back to Portfolio
         </Link>

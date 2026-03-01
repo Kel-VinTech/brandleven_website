@@ -1,5 +1,19 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook } from "lucide-react";
+import { Zap } from "lucide-react";
+
+const TikTokIcon = ({ size = 16 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+  </svg>
+);
+
+const socialLinks = [
+  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Facebook, href: "#", label: "Facebook" },
+  { icon: TikTokIcon, href: "#", label: "TikTok" },
+];
 
 const Footer = () => {
   return (
@@ -8,10 +22,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-extrabold mb-4">
-              <span className="text-primary">Brand</span>leven
-            </h3>
-
+            <Link to="/" className="flex items-center gap-2 text-2xl font-extrabold mb-4">
+              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+                <Zap size={18} className="text-primary-foreground" />
+              </div>
+              <span className="text-primary">Brandleven</span>
+            </Link>
             <p className="text-background/70 text-sm leading-relaxed">
               We build high-converting websites and run data-driven ad campaigns that deliver measurable results.
             </p>
@@ -57,13 +73,29 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2">
                 <Mail size={16} className="text-primary" />
-                <a href="mailto:info.kelvinleven@gmail.com" className="hover:text-primary transition-colors">info.kelvinleven@gmail.com</a>
+                <a href="mailto:contactbrandleven@gmail.com" className="hover:text-primary transition-colors">contactbrandleven@gmail.com</a>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin size={16} className="text-primary" />
                 <span>Remote — Worldwide</span>
               </li>
             </ul>
+
+            {/* Social Icons */}
+            <div className="flex items-center gap-4 mt-5">
+              {socialLinks.map(({ icon: Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="text-background/50 hover:text-primary hover:-translate-y-0.5 transition-all duration-300"
+                >
+                  <Icon size={18} />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
