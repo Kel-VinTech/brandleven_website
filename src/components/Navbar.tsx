@@ -49,7 +49,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between h-16 md:h-20 px-4">
         <a href="/" className="flex items-center gap-2 text-2xl font-extrabold tracking-tight">
-          <img src="/images/logo-icon.png" alt="Brandleven logo" className="w-8 h-8 rounded-lg" />
+          <img src="/images/logo-icon.png" alt="Brandleven logo" className="w-8 h-8 rounded-lg" width={32} height={32} decoding="async" />
           <div>
             <span className="text-gradient">Brand</span>
             <span className="text-foreground">leven</span>

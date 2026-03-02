@@ -21,7 +21,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <a href="/" className="flex items-center gap-2 text-2xl font-extrabold mb-4">
-              <img src="/images/logo-icon.png" alt="Brandleven logo" className="w-8 h-8 rounded-lg" />
+              <img src="/images/logo-icon.png" alt="Brandleven logo" className="w-8 h-8 rounded-lg" width={32} height={32} decoding="async" />
               <span className="text-primary">Brandleven</span>
             </a>
             <p className="text-background/70 text-sm leading-relaxed">
