@@ -71,20 +71,6 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
-          <div className="flex items-center gap-3 border-l border-border pl-4">
-            {headerSocials.map(({ icon: Icon, href, label }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={label}
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Icon size={15} />
-              </a>
-            ))}
-          </div>
           <Button variant="cta" size="sm" asChild>
             <a href="/contact">Get a Free Consultation</a>
           </Button>
