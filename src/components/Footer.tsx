@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Facebook } from "lucide-react";
 
 const TikTokIcon = ({ size = 16 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -7,9 +7,8 @@ const TikTokIcon = ({ size = 16 }: { size?: number }) => (
 );
 
 const socialLinks = [
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Facebook, href: "#", label: "Facebook" },
+  { icon: Instagram, href: "https://www.instagram.com/brandleven?igsh=MWUyZGQ5ZmlzMmdndQ==", label: "Instagram" },
+  { icon: Facebook, href: "https://facebook.com/brandleven", label: "Facebook" },
   { icon: TikTokIcon, href: "#", label: "TikTok" },
 ];
 
