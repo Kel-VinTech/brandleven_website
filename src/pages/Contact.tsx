@@ -22,12 +22,16 @@ const Contact = () => {
 
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
 
     try {
       const res = await fetch(FORMSPREE_URL, {
         method: "POST",
-        body: formData,
-        headers: { Accept: "application/json" },
+        body: JSON.stringify(data),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
       });
 
       if (res.status === 200) {
