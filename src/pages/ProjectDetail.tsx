@@ -17,71 +17,98 @@ const allProjects: Record<string, {
   results: string[];
   description: string;
 }> = {
-  "trendfusion-ecommerce": {
-    title: "TrendFusion E-commerce",
-    category: "E-commerce Website Design",
-    color: "from-blue-500 to-indigo-600",
-    url: "https://trendfusion.com",
-    screenshot: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
-    description: "TrendFusion needed a complete e-commerce overhaul to compete in the fast-fashion market. We delivered a lightning-fast, conversion-optimized storefront.",
-    clientGoals: [
-      "Increase online sales and conversion rates",
-      "Reduce page load time for better UX",
-      "Modern, mobile-first shopping experience",
-      "Streamlined checkout process",
-    ],
-    whatWeDid: [
-      "Redesigned the entire storefront with a mobile-first approach",
-      "Implemented lazy loading and image optimization for speed",
-      "Built a custom checkout flow reducing cart abandonment by 35%",
-      "Integrated advanced product filtering and search",
-      "Set up conversion tracking and A/B testing framework",
-    ],
-    results: ["+240% Conversions", "+180% Revenue", "3.2s → 1.1s Load Time"],
+  "apex-consulting": {
+  title: "Apex Consulting Website",
+  category: "Corporate Consulting Website",
+  color: "from-blue-500 to-indigo-600",
+  url: "https://www.apexconsulting.ng/",
+  screenshot: "/images/apex_consulting.webp",
+  description:
+    "Apex Consulting needed a professional corporate website to establish credibility, showcase consulting services, and generate enquiries from businesses.",
+
+  clientGoals: [
+    "Build a strong professional online presence",
+    "Attract corporate clients and consulting enquiries",
+    "Create a modern and mobile-friendly website",
+    "Improve trust and credibility with potential clients",
+  ],
+
+  whatWeDid: [
+    "Designed a modern corporate consulting website",
+    "Built service pages highlighting consulting solutions",
+    "Integrated lead capture forms for client enquiries",
+    "Optimized the website for SEO and performance",
+    "Implemented analytics to track user behaviour and conversions",
+  ],
+
+  results: [
+    "Professional Corporate Website",
+    "Mobile Optimized Experience",
+    "Lead Generation Ready",
+  ],
   },
-  "novatech-saas": {
-    title: "NovaTech SaaS",
-    category: "Landing Page Design",
-    color: "from-violet-500 to-purple-600",
-    url: "https://novatech.io",
-    screenshot: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
-    description: "NovaTech required a high-converting landing page to drive signups for their cloud platform. We crafted a compelling narrative with clear CTAs.",
+
+ "pure-aura-retreat": {
+  title: "Pure Aura Retreat Spa",
+  category: "Spa & Salon Website Design",
+  color: "from-amber-500 to-orange-600",
+  url: "https://pure-aura-website.vercel.app/",
+  screenshot: "/images/pure_aura.webp",
+
+  description:
+    "Pure Aura Retreat needed a luxurious and calming digital presence that reflects their premium spa and wellness services. We created an elegant, mobile-first website designed to attract new clients and simplify appointment bookings.",
+
+  clientGoals: [
+    "Create a luxury spa brand presence online",
+    "Attract new clients searching for wellness services",
+    "Allow customers to easily explore services and pricing",
+    "Enable seamless appointment booking experience"
+  ],
+
+  whatWeDid: [
+    "Designed a luxury spa website with a calming aesthetic",
+    "Built service and pricing pages for clear offerings",
+    "Created a mobile-optimized experience for clients on phones",
+    "Integrated call-to-action booking buttons throughout the site",
+    "Optimized images and layout for fast loading and smooth browsing"
+  ],
+
+  results: [
+    "Luxury Brand Website",
+    "Mobile Optimized Experience",
+    "Appointment Booking Ready"
+  ],
+},
+  "lumiere-interiors": {
+    title: "Lumière Interiors",
+    category: "Interior Design Corporate Website",
+    color: "from-neutral-700 to-stone-900",
+    url: "https://lumiere-website-bice.vercel.app/",
+    screenshot: "/images/lumiere.webp",
+
+    description:
+      "Lumière Interiors required a sophisticated digital presence that reflects their luxury interior design brand. We created an elegant, modern website that showcases their portfolio, communicates their design philosophy, and attracts high-end clients.",
+
     clientGoals: [
-      "Increase free trial signups",
-      "Clearly communicate product value proposition",
-      "Build trust with enterprise clients",
-      "Improve lead quality from organic traffic",
+      "Showcase luxury interior design projects",
+      "Establish a premium and trustworthy brand online",
+      "Attract high-end residential and commercial clients",
+      "Create an elegant portfolio-focused experience"
     ],
+
     whatWeDid: [
-      "Designed a single-page experience with strategic CTA placement",
-      "Created compelling copy focused on pain points and solutions",
-      "Built interactive product demos embedded in the page",
-      "Implemented social proof sections with real metrics",
-      "Optimized for SEO targeting SaaS-related keywords",
+      "Designed a luxury, minimalist website aesthetic",
+      "Created a portfolio gallery to showcase design projects",
+      "Built clear service pages explaining interior design offerings",
+      "Implemented responsive design for mobile and tablet users",
+      "Optimized layout and assets for fast performance"
     ],
-    results: ["+160% Signups", "38% Conversion Rate", "2x Lead Quality"],
-  },
-  "cloudsync-solutions": {
-    title: "CloudSync Solutions",
-    category: "Business Website Development",
-    color: "from-amber-500 to-orange-600",
-    url: "https://cloudsync.com",
-    screenshot: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80",
-    description: "CloudSync needed a professional corporate website that positions them as an industry leader in cloud infrastructure solutions.",
-    clientGoals: [
-      "Establish credibility in the B2B cloud market",
-      "Generate qualified enterprise leads",
-      "Showcase technical capabilities and case studies",
-      "Ensure 99.9% uptime for the website itself",
+
+    results: [
+      "Luxury Brand Website",
+      "Portfolio Showcase Experience",
+      "Mobile Optimized Design"
     ],
-    whatWeDid: [
-      "Built a professional multi-page site with a clean corporate design",
-      "Created detailed service pages optimized for lead generation",
-      "Integrated a blog and resource center for content marketing",
-      "Set up lead capture forms with CRM integration",
-      "Deployed on high-availability infrastructure",
-    ],
-    results: ["+300% Leads", "98% Uptime", "Professional Redesign"],
   },
   "meridian-finance": {
     title: "Meridian Finance",

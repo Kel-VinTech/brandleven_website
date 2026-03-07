@@ -7,28 +7,40 @@ import PageHero from "@/components/PageHero";
 
 const websiteProjects = [
   {
-    title: "TrendFusion E-commerce",
-    category: "E-commerce Website Design",
-    results: ["+240% Conversions", "+180% Revenue", "3.2s → 1.1s Load Time"],
+    title: "Apex Consulting Website",
+    category: "Corporate Consulting Website",
+    results: [
+      "Professional Brand Website",
+      "Lead Generation Ready",
+      "SEO Optimized Structure"
+    ],
     color: "from-blue-500 to-indigo-600",
-    slug: "trendfusion-ecommerce",
-    screenshot: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80",
+    slug: "apex-consulting",
+    screenshot: "/images/apex_consulting.webp",
   },
   {
-    title: "NovaTech SaaS",
-    category: "Landing Page Design",
-    results: ["+160% Signups", "38% Conversion Rate", "2x Lead Quality"],
-    color: "from-violet-500 to-purple-600",
-    slug: "novatech-saas",
-    screenshot: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80",
+  title: "Pure Aura Retreat Spa",
+  category: "Spa & Salon Website",
+  results: [
+    "Luxury Brand Design",
+    "Mobile Optimized",
+    "Booking Ready"
+  ],
+  color: "from-amber-500 to-orange-600",
+  slug: "pure-aura-retreat",
+  screenshot: "/images/pure_aura.webp",
   },
-  {
-    title: "CloudSync Solutions",
-    category: "Business Website Development",
-    results: ["+300% Leads", "98% Uptime", "Professional Redesign"],
-    color: "from-amber-500 to-orange-600",
-    slug: "cloudsync-solutions",
-    screenshot: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80",
+ {
+    title: "Lumière Interiors",
+    category: "Interior Design Website",
+    results: [
+      "Luxury Brand Design",
+      "Portfolio Showcase",
+      "Mobile Optimized"
+    ],
+    color: "from-neutral-700 to-stone-900",
+    slug: "lumiere-interiors",
+    screenshot: "/images/lumiere.webp",
   },
   {
     title: "Meridian Finance",
