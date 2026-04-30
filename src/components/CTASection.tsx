@@ -10,9 +10,9 @@ interface CTASectionProps {
 }
 
 const CTASection = ({
-  title = "Ready to Elevate Your Brand Online?",
-  subtitle = "Let's build something exceptional — and make it perform.",
-  buttonText = "Book a Free Strategy Call",
+  title = "Ready to Build a System That Drives Real Growth?",
+  subtitle = "Let's design a digital marketing system tailored to your business goals.",
+  buttonText = "Request a Strategy Call",
   buttonLink = "/contact",
 }: CTASectionProps) => {
   return (

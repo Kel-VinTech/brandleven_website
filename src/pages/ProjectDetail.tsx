@@ -5,6 +5,13 @@ import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
 import CTASection from "@/components/CTASection";
 import PageHero from "@/components/PageHero";
+import { useSEO } from "@/hooks/use-seo";
+import apexConsultingImg from "@/assets/apex-consulting.webp";
+import pureAuraImg from "@/assets/pure-aura-retreat.webp";
+import lumiereInteriorsImg from "@/assets/lumiere-interiors.webp";
+import maisonAurelleImg from "@/assets/maison-aurelle.webp";
+import lipEnvyImg from "@/assets/lip-envy-luxury-lip-care.webp";
+import lkAestheticsImg from "@/assets/lk-aesthetics-tanning.webp";
 
 const allProjects: Record<string, {
   title: string;
@@ -17,170 +24,153 @@ const allProjects: Record<string, {
   results: string[];
   description: string;
 }> = {
-  "apex-consulting": {
-  title: "Apex Consulting Website",
-  category: "Corporate Consulting Website",
-  color: "from-blue-500 to-indigo-600",
-  url: "https://www.apexconsulting.ng/",
-  screenshot: "/images/apex_consulting.webp",
-  description:
-    "Apex Consulting needed a professional corporate website to establish credibility, showcase consulting services, and generate enquiries from businesses.",
-
-  clientGoals: [
-    "Build a strong professional online presence",
-    "Attract corporate clients and consulting enquiries",
-    "Create a modern and mobile-friendly website",
-    "Improve trust and credibility with potential clients",
-  ],
-
-  whatWeDid: [
-    "Designed a modern corporate consulting website",
-    "Built service pages highlighting consulting solutions",
-    "Integrated lead capture forms for client enquiries",
-    "Optimized the website for SEO and performance",
-    "Implemented analytics to track user behaviour and conversions",
-  ],
-
-  results: [
-    "Professional Corporate Website",
-    "Mobile Optimized Experience",
-    "Lead Generation Ready",
-  ],
+  "pure-aura-retreat": {
+    title: "Pure Aura Retreat Spa",
+    category: "Spa & Salon Website Design",
+    color: "from-amber-500 to-orange-600",
+    url: "https://pureauraretreat.com",
+    screenshot: pureAuraImg,
+    description: "Pure Aura Retreat needed a luxurious and calming digital presence that reflects their premium spa and wellness services. We created an elegant, mobile-first website designed to attract new clients and simplify appointment bookings.",
+    clientGoals: [
+      "Create a luxury spa brand presence online",
+      "Attract new clients searching for wellness services",
+      "Allow customers to easily explore services and pricing",
+      "Enable seamless appointment booking experience",
+    ],
+    whatWeDid: [
+      "Designed a luxury spa website with a calming aesthetic",
+      "Built service and pricing pages for clear offerings",
+      "Created a mobile-optimized experience for clients on phones",
+      "Integrated call-to-action booking buttons throughout the site",
+      "Optimized images and layout for fast loading and smooth browsing",
+    ],
+    results: ["Luxury Brand Website", "Mobile Optimized Experience", "Appointment Booking Ready"],
   },
-
- "pure-aura-retreat": {
-  title: "Pure Aura Retreat Spa",
-  category: "Spa & Salon Website Design",
-  color: "from-amber-500 to-orange-600",
-  url: "https://pure-aura-website.vercel.app/",
-  screenshot: "/images/pure_aura.webp",
-
-  description:
-    "Pure Aura Retreat needed a luxurious and calming digital presence that reflects their premium spa and wellness services. We created an elegant, mobile-first website designed to attract new clients and simplify appointment bookings.",
-
-  clientGoals: [
-    "Create a luxury spa brand presence online",
-    "Attract new clients searching for wellness services",
-    "Allow customers to easily explore services and pricing",
-    "Enable seamless appointment booking experience"
-  ],
-
-  whatWeDid: [
-    "Designed a luxury spa website with a calming aesthetic",
-    "Built service and pricing pages for clear offerings",
-    "Created a mobile-optimized experience for clients on phones",
-    "Integrated call-to-action booking buttons throughout the site",
-    "Optimized images and layout for fast loading and smooth browsing"
-  ],
-
-  results: [
-    "Luxury Brand Website",
-    "Mobile Optimized Experience",
-    "Appointment Booking Ready"
-  ],
-},
   "lumiere-interiors": {
     title: "Lumière Interiors",
     category: "Interior Design Corporate Website",
-    color: "from-neutral-700 to-stone-900",
-    url: "https://lumiere-website-bice.vercel.app/",
-    screenshot: "/images/lumiere.webp",
-
-    description:
-      "Lumière Interiors required a sophisticated digital presence that reflects their luxury interior design brand. We created an elegant, modern website that showcases their portfolio, communicates their design philosophy, and attracts high-end clients.",
-
+    color: "from-stone-500 to-amber-700",
+    url: "https://lumiereinteriors.com",
+    screenshot: lumiereInteriorsImg,
+    description: "Lumière Interiors required a sophisticated digital presence that reflects their luxury interior design brand. We created an elegant, modern website that showcases their portfolio, communicates their design philosophy, and attracts high-end clients.",
     clientGoals: [
       "Showcase luxury interior design projects",
       "Establish a premium and trustworthy brand online",
       "Attract high-end residential and commercial clients",
-      "Create an elegant portfolio-focused experience"
+      "Create an elegant portfolio-focused experience",
     ],
-
     whatWeDid: [
       "Designed a luxury, minimalist website aesthetic",
       "Created a portfolio gallery to showcase design projects",
       "Built clear service pages explaining interior design offerings",
       "Implemented responsive design for mobile and tablet users",
-      "Optimized layout and assets for fast performance"
+      "Optimized layout and assets for fast performance",
     ],
-
-    results: [
-      "Luxury Brand Website",
-      "Portfolio Showcase Experience",
-      "Mobile Optimized Design"
-    ],
+    results: ["Luxury Brand Website", "Portfolio Showcase Experience", "Mobile Optimized Design"],
   },
-  "meridian-finance": {
-    title: "Meridian Finance",
-    category: "Corporate Website Design",
+  "maison-aurelle": {
+    title: "Maison Aurelle",
+    category: "Fashion E-commerce Website",
+    color: "from-stone-400 to-amber-600",
+    url: "https://maisonaurelle.com",
+    screenshot: maisonAurelleImg,
+    description: "Maison Aurelle needed an editorial-grade e-commerce experience that reflects their premium fashion brand. We crafted a refined storefront focused on storytelling, conscious style, and a frictionless shopping journey across devices.",
+    clientGoals: [
+      "Establish a luxury fashion brand presence online",
+      "Showcase seasonal collections with editorial storytelling",
+      "Drive online sales through a refined shopping experience",
+      "Build a mobile-first storefront for modern shoppers",
+    ],
+    whatWeDid: [
+      "Designed an editorial homepage with full-bleed lookbook hero",
+      "Built collection and product pages with premium typography",
+      "Implemented wishlist, cart, and account flows for shoppers",
+      "Optimized checkout for mobile conversions and speed",
+      "Tuned imagery and assets for fast loading across devices",
+    ],
+    results: ["Premium Brand Storefront", "Mobile-First Shopping Experience", "Conversion Optimized Design"],
+  },
+  "apex-consulting": {
+    title: "Apex Consulting",
+    category: "Corporate Consulting Website",
     color: "from-teal-500 to-emerald-600",
-    url: "https://meridianfinance.com",
-    screenshot: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80",
-    description: "Meridian Finance needed a modern corporate website that conveys trust and generates high-quality leads from enterprise clients.",
+    url: "https://apexconsulting.com",
+    screenshot: apexConsultingImg,
+    description: "Apex Consulting needed a professional corporate website to establish credibility, showcase consulting services, and generate enquiries from businesses.",
     clientGoals: [
-      "Establish a premium digital presence",
-      "Generate qualified B2B leads",
-      "Reduce page load times significantly",
-      "Lower bounce rate across key pages",
+      "Build a strong professional online presence",
+      "Attract corporate clients and consulting enquiries",
+      "Create a modern and mobile-friendly website",
+      "Improve trust and credibility with potential clients",
     ],
     whatWeDid: [
-      "Redesigned the entire corporate site with a trust-first approach",
-      "Built custom lead capture funnels with CRM integration",
-      "Optimized Core Web Vitals for SEO performance",
-      "Created detailed service and team pages",
-      "Implemented analytics and conversion tracking",
+      "Designed a modern corporate consulting website",
+      "Built service pages highlighting consulting solutions",
+      "Integrated lead capture forms for client enquiries",
+      "Optimized the website for SEO and performance",
+      "Implemented analytics to track user behaviour and conversions",
     ],
-    results: ["+200% Lead Gen", "4.5s → 1.3s Load", "50% Lower Bounce"],
+    results: ["Professional Corporate Website", "Mobile Optimized Experience", "Lead Generation Ready"],
   },
-  "bloom-beauty": {
-    title: "Bloom Beauty",
-    category: "E-commerce Website Design",
-    color: "from-pink-500 to-rose-600",
-    url: "https://bloombeauty.com",
-    screenshot: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=1200&q=80",
-    description: "Bloom Beauty required a visually stunning e-commerce store that reflects their brand identity and maximizes conversions.",
+  "lip-envy": {
+    title: "Lip Envy",
+    category: "Luxury Lip Care E-commerce",
+    color: "from-pink-400 to-primary",
+    url: "https://lipenvy.com",
+    screenshot: lipEnvyImg,
+    description: "Lip Envy needed a polished beauty e-commerce experience that blends premium branding with a clear shopping journey, helping customers discover curated lip products and buy confidently across devices.",
     clientGoals: [
-      "Increase online sales and repeat purchases",
-      "Create a luxury shopping experience",
-      "Boost average order value",
-      "Build a loyal customer base",
+      "Create a memorable luxury beauty brand presence online",
+      "Showcase featured lip products in a clean editorial storefront",
+      "Drive mobile and desktop purchases with a frictionless shopping flow",
+      "Build trust through premium visuals and clear product discovery",
     ],
     whatWeDid: [
-      "Designed a premium storefront with lifestyle photography",
-      "Built product bundles and upsell flows",
-      "Implemented loyalty rewards and referral system",
-      "Optimized checkout for mobile conversions",
-      "Set up email marketing automations",
+      "Designed a soft luxury storefront inspired by editorial beauty campaigns",
+      "Built a hero-led shopping experience with strong collection call-to-actions",
+      "Structured product discovery around curated lip care and beauty categories",
+      "Optimized the layout for mobile-first browsing and conversion-ready shopping",
+      "Compressed imagery and storefront assets for fast loading performance",
     ],
-    results: ["+320% Sales", "45% Repeat Buyers", "2.8x AOV Increase"],
+    results: ["Premium Product Showcase", "Mobile Shopping Ready", "Conversion-Focused Storefront"],
   },
-  "atlas-logistics": {
-    title: "Atlas Logistics",
-    category: "Business Web Application",
-    color: "from-sky-500 to-blue-600",
-    url: "https://atlaslogistics.com",
-    screenshot: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80",
-    description: "Atlas Logistics needed a web application to streamline their operations and provide real-time tracking for clients.",
+  "lk-aesthetics-tanning": {
+    title: "LK Aesthetics & Tanning",
+    category: "Aesthetics & Tanning Website",
+    color: "from-secondary to-primary",
+    url: "https://lkaestheticsandtanning.com",
+    screenshot: lkAestheticsImg,
+    description: "LK Aesthetics & Tanning needed a luxury beauty website that reflects its premium in-clinic experience, clearly presents treatments and pricing, and makes it easy for clients to book appointments online.",
     clientGoals: [
-      "Digitize manual logistics workflows",
-      "Enable real-time shipment tracking",
-      "Reduce operational costs",
-      "Improve client communication",
+      "Create a polished online presence for aesthetics and tanning services",
+      "Showcase treatments, deals, and pricing in a clear structure",
+      "Increase appointment bookings from mobile and desktop visitors",
+      "Build trust with a premium, beauty-focused first impression",
     ],
     whatWeDid: [
-      "Built a custom web application with real-time dashboards",
-      "Integrated GPS tracking and notification systems",
-      "Created client portal for shipment visibility",
-      "Automated reporting and invoicing workflows",
-      "Deployed on scalable cloud infrastructure",
+      "Designed a luxury service website with a strong beauty brand aesthetic",
+      "Built dedicated sections for treatments, pricing, deals, and contact details",
+      "Created a mobile-optimized navigation flow for service discovery",
+      "Integrated a clear booking system pathway with prominent call-to-action buttons",
+      "Optimized imagery and page structure for fast loading and easy browsing",
     ],
-    results: ["+180% Efficiency", "Real-time Tracking", "40% Cost Reduction"],
+    results: ["Online Booking System", "Luxury Service Showcase", "Mobile Booking Ready"],
   },
 };
 
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const project = slug ? allProjects[slug] : null;
+
+  useSEO({
+    title: project
+      ? `${project.title} — ${project.category} Case Study | Brandleven`
+      : "Case Study Not Found | Brandleven",
+    description: project
+      ? `${project.description} See how Brandleven's integrated marketing system delivered measurable results for ${project.title}.`
+      : "The case study you're looking for could not be found.",
+    canonicalPath: slug ? `/portfolio/${slug}` : "/portfolio",
+  });
 
   if (!project) {
     return (

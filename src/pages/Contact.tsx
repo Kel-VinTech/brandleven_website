@@ -7,10 +7,16 @@ import { useToast } from "@/hooks/use-toast";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import PageHero from "@/components/PageHero";
+import { useSEO } from "@/hooks/use-seo";
 
 const FORMSPREE_URL = "https://formspree.io/f/xreawbje";
 
 const Contact = () => {
+  useSEO({
+    title: "Contact Brandleven — Request a Strategy Call",
+    description: "Tell us about your business goals and we'll design a digital marketing system to attract, convert, and grow revenue. Request a strategy call today.",
+    canonicalPath: "/contact",
+  });
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
@@ -55,8 +61,8 @@ const Contact = () => {
     <Layout>
       <PageHero
         badge="Contact"
-        headline={<>Let's Build Something <span className="text-primary">Exceptional.</span></>}
-        subtitle="Ready to grow your business? Get in touch and let's discuss your goals."
+        headline={<>Let's Design Your <span className="text-primary">Growth System.</span></>}
+        subtitle="Tell us about your business goals and we'll map out a digital marketing system designed to attract, convert, and grow revenue."
       />
 
       <section className="py-20 md:py-28">
@@ -64,7 +70,7 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
             {/* Contact Info */}
             <div>
-              <SectionHeading badge="Get in Touch" title="Let's Talk Growth" center={false} />
+              <SectionHeading badge="Get in Touch" title="Let's Talk About Your Growth System" center={false} />
               <div className="space-y-6 mb-10">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-lg bg-accent flex items-center justify-center shrink-0">
@@ -98,7 +104,7 @@ const Contact = () => {
 
             {/* Form */}
             <div className="bg-card border border-border rounded-xl p-8">
-              <h3 className="text-xl font-bold mb-6">Send Us a Message</h3>
+              <h3 className="text-xl font-bold mb-6">Request a Strategy Call</h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
                 {formError && (
@@ -119,15 +125,15 @@ const Contact = () => {
                   <Input name="business" placeholder="Your business name" maxLength={100} />
                 </div>
                 <div>
-                  <label className="text-sm font-medium mb-1.5 block">Service Needed</label>
-                  <Input name="service" placeholder="e.g., Website Design, Facebook Ads" maxLength={100} />
+                  <label className="text-sm font-medium mb-1.5 block">System of Interest</label>
+                  <Input name="service" placeholder="e.g., Basic, Growth, or Scale System" maxLength={100} />
                 </div>
                 <div>
                   <label className="text-sm font-medium mb-1.5 block">Message *</label>
-                  <Textarea name="message" required placeholder="Tell us about your project and goals..." rows={4} maxLength={1000} />
+                  <Textarea name="message" required placeholder="Tell us about your business and growth goals..." rows={4} maxLength={1000} />
                 </div>
                 <Button type="submit" variant="cta" size="lg" className="w-full py-6 text-base" disabled={isSubmitting}>
-                  {isSubmitting ? "Sending..." : "Book a Free Strategy Call"} <Send size={18} />
+                  {isSubmitting ? "Sending..." : "Request a Strategy Call"} <Send size={18} />
                 </Button>
               </form>
             </div>

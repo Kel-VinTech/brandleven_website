@@ -1,104 +1,137 @@
 import { Button } from "@/components/ui/button";
 import {
-  Globe, Megaphone, TrendingUp, BarChart3, Users, Star,
-  ArrowRight, CheckCircle, Monitor, ShoppingCart, MousePointerClick,
-  Facebook, Instagram, Clapperboard, Search, Layers, Rocket, LineChart,
-  Paintbrush, Target, Handshake
+  ArrowRight, CheckCircle, Star, Users, TrendingUp,
+  Globe, Megaphone, Target, Handshake, Eye, RefreshCw,
+  BarChart3, Zap, Shield, Layers
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import CTASection from "@/components/CTASection";
 import ScrollReveal from "@/components/ScrollReveal";
-import { motion, useInView } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
-
-const services = [
-  { icon: Globe, title: "Website Design Agency", desc: "Strategic, design-led websites crafted to elevate brands and drive measurable growth." },
-  { icon: Monitor, title: "Professional Development", desc: "Custom digital platforms built for speed, scalability, and seamless user experience." },
-  { icon: MousePointerClick, title: "High-Converting Websites", desc: "Design meets data — every element optimized for performance." },
-  { icon: Megaphone, title: "Digital Marketing Agency", desc: "Creative-led ad systems engineered for predictable ROI." },
-  { icon: Facebook, title: "Facebook Ads Expert", desc: "Performance-focused campaigns designed to scale profitably." },
-  { icon: Instagram, title: "Instagram Ads Specialist", desc: "High-impact creatives built to convert attention into action." },
-  { icon: Clapperboard, title: "TikTok Ads Marketing", desc: "Scroll-stopping campaigns optimized for rapid growth." },
-];
+import { motion } from "framer-motion";
+import { useSEO } from "@/hooks/use-seo";
 
 const growthSteps = [
-  { icon: Search, title: "Strategy & Research", desc: "We analyze your market, audience, and growth opportunities." },
-  { icon: Layers, title: "Conversion-Focused Build", desc: "We design websites engineered for performance." },
-  { icon: Rocket, title: "Launch & Optimization", desc: "We test, track, and refine for maximum efficiency." },
-  { icon: LineChart, title: "Scale with Data", desc: "We use real performance data to scale revenue." },
+  {
+    icon: Eye,
+    step: "01",
+    title: "Attract",
+    desc: "We build your visibility and reach through structured social media and content strategy.",
+  },
+  {
+    icon: Target,
+    step: "02",
+    title: "Convert",
+    desc: "We create optimized web experiences that turn visitors into leads and customers.",
+  },
+  {
+    icon: TrendingUp,
+    step: "03",
+    title: "Grow",
+    desc: "We continuously refine and manage your digital presence to improve performance and scale revenue.",
+  },
+];
+
+const packages = [
+  {
+    name: "Basic System",
+    goal: "Establish your digital foundation",
+    desc: "Establish your digital foundation with a structured online presence and conversion-ready setup.",
+    features: [
+      "Conversion-Focused Web Experience",
+      "Foundational SEO Setup",
+      "Lead Capture Integration",
+      "Brand Positioning Framework",
+    ],
+    highlight: false,
+  },
+  {
+    name: "Growth System",
+    goal: "Attract and engage your audience",
+    desc: "Attract and engage your audience through integrated content strategy and managed digital presence.",
+    features: [
+      "Conversion-Focused Web Experience",
+      "Funnel Optimization",
+      "Audience Growth & Engagement Setup",
+      "Content Strategy & Planning",
+      "Managed Social Presence",
+    ],
+    highlight: true,
+  },
+  {
+    name: "Scale System",
+    goal: "Generate demand and scale revenue",
+    desc: "A fully managed marketing system designed to consistently generate demand, convert customers, and drive revenue growth.",
+    features: [
+      "Conversion-Focused Web Experience",
+      "Funnel & Conversion Optimization",
+      "Full Audience Growth & Engagement Management",
+      "Content Strategy, Creation & Publishing",
+      "Community & Engagement Management (DMs & Comments)",
+      "Brand Consistency Across Channels",
+      "Monthly Performance Tracking & Optimization",
+    ],
+    highlight: false,
+  },
 ];
 
 const results = [
-  { value: 300, suffix: "%", label: "Average Sales Increase Within 90 Days" },
-  { value: 5, suffix: "X", label: "Return on Ad Spend Across Campaigns" },
-  { value: 150, suffix: "+", label: "Brands Scaled Globally" },
-  { value: 98, suffix: "%", label: "Client Retention Rate" },
+  { icon: Globe, text: "Improved lead generation through structured digital systems" },
+  { icon: Megaphone, text: "Enhanced customer engagement and conversion across digital channels" },
+  { icon: BarChart3, text: "Supported businesses in building scalable marketing foundations" },
+  { icon: Users, text: "Delivered integrated marketing systems for 150+ brands worldwide" },
 ];
 
 const whyUs = [
-  { icon: Paintbrush, title: "Design-Led Strategy", desc: "We lead with aesthetics and brand identity — backed by conversion science." },
-  { icon: Target, title: "Data-Driven Execution", desc: "Every decision is informed by analytics, A/B tests, and real performance metrics." },
-  { icon: Handshake, title: "Long-Term Growth Partnership", desc: "We're not a vendor — we're your growth partner invested in your success." },
+  {
+    icon: Layers,
+    title: "Integrated Systems, Not Isolated Services",
+    desc: "We don't deliver isolated services — we design and manage integrated systems built to drive measurable growth.",
+  },
+  {
+    icon: Zap,
+    title: "Focused on Business Outcomes",
+    desc: "Our focus is on measurable business outcomes — leads, customers, and revenue — not surface-level activity.",
+  },
+  {
+    icon: Shield,
+    title: "Strategy, Execution & Optimization",
+    desc: "We combine strategy, execution, and continuous optimization to drive consistent, compounding growth.",
+  },
 ];
 
 const testimonials = [
   {
     name: "Sarah Mitchell",
     role: "CEO, TrendFusion",
-    quote: "Brandleven transformed our online presence completely. Our conversions increased by 240% within the first quarter.",
+    quote: "Brandleven built us a complete digital system — and our leads grew by 240% in the first quarter. They genuinely care about results.",
   },
   {
     name: "James Okonkwo",
     role: "Founder, GreenPath Stores",
-    quote: "Their Facebook ads strategy was a game-changer. We saw a 5x ROAS and our best sales month ever.",
+    quote: "They brought our social media and website together into one clear strategy. We had our best sales month ever — and the process felt easy.",
   },
   {
-    name: "Emily Chen",
-    role: "CMO, NovaTech",
-    quote: "Professional, responsive, and results-driven. Brandleven delivered beyond our expectations every time.",
+    name: "Ihuoma Ibechuckwu",
+    role: "CEO, Apex Consulting Global",
+    quote: "Professional, strategic, and refreshingly focused on real outcomes. Brandleven delivered beyond what we expected.",
   },
 ];
 
-const AnimatedCounter = ({ value, suffix }: { value: number; suffix: string }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!isInView) return;
-    let start = 0;
-    const duration = 1500;
-    const step = Math.ceil(value / (duration / 16));
-    const timer = setInterval(() => {
-      start += step;
-      if (start >= value) {
-        setCount(value);
-        clearInterval(timer);
-      } else {
-        setCount(start);
-      }
-    }, 16);
-    return () => clearInterval(timer);
-  }, [isInView, value]);
-
-  return (
-    <div ref={ref} className="text-4xl md:text-5xl font-extrabold text-primary">
-      {count}{suffix}
-    </div>
-  );
-};
-
 const Index = () => {
+  useSEO({
+    title: "Brandleven — Digital Marketing Systems That Drive Business Growth",
+    description: "We design and manage integrated digital marketing systems that help businesses attract the right audience, convert opportunities into customers, and grow revenue.",
+    canonicalPath: "/",
+  });
   return (
     <Layout>
-      {/* Hero — Premium Agency Style */}
+      {/* Hero */}
       <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden bg-background">
         <div className="absolute inset-0 hero-grid opacity-[0.035]" />
         <div className="absolute top-20 -right-32 w-[500px] h-[500px] rounded-full bg-primary/5 blur-3xl" />
         <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full bg-primary/5 blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full border border-primary/[0.06]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border border-primary/[0.04]" />
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -108,23 +141,21 @@ const Index = () => {
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
               <span className="inline-block bg-accent text-accent-foreground text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
-                Digital Agency — Remote Worldwide
+                Integrated Digital Marketing Systems
               </span>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-foreground leading-[1.08] mb-6 tracking-tight">
-                We Design{" "}
-                <span className="text-gradient">Digital Experiences</span>{" "}
-                That Drive{" "}
-                <span className="text-gradient">Growth.</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground leading-[1.08] mb-6 tracking-tight">
+                We Design and Manage Digital Marketing Systems That{" "}
+                <span className="text-gradient">Drive Business Growth</span>
               </h1>
               <p className="text-muted-foreground text-lg md:text-xl mb-10 max-w-xl leading-relaxed">
-                Brandleven is a design-driven digital agency building high-converting websites and scalable ad systems for ambitious brands.
+                We help businesses attract the right audience, convert opportunities into customers, and grow revenue through integrated digital marketing systems.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="cta" size="lg" asChild className="text-base px-8 py-6">
-                  <a href="/contact">Book a Free Strategy Call <ArrowRight size={18} /></a>
+                  <a href="/contact">Request a Strategy Call <ArrowRight size={18} /></a>
                 </Button>
                 <Button variant="outline" size="lg" asChild className="text-base px-8 py-6">
-                  <a href="/portfolio">View Our Work</a>
+                  <a href="/portfolio">View Case Studies</a>
                 </Button>
               </div>
               <motion.div
@@ -134,15 +165,15 @@ const Index = () => {
                 className="mt-8 flex items-center gap-6 text-sm text-muted-foreground"
               >
                 <span className="flex items-center gap-1.5">
-                  <CheckCircle size={14} className="text-primary" /> Trusted by 150+ brands
+                  <CheckCircle size={14} className="text-primary" /> 150+ brands served
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <Star size={14} className="fill-primary text-primary" /> 98% client satisfaction
+                  <Star size={14} className="fill-primary text-primary" /> Integrated marketing systems
                 </span>
               </motion.div>
             </motion.div>
 
-            {/* Right — Floating UI mockup */}
+            {/* Right — System Visualization */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -156,17 +187,27 @@ const Index = () => {
                     <div className="w-3 h-3 rounded-full bg-accent-foreground/30" />
                     <div className="w-3 h-3 rounded-full bg-primary/40" />
                   </div>
-                  <div className="space-y-4">
-                    <div className="h-4 bg-muted rounded w-3/4" />
-                    <div className="h-3 bg-muted rounded w-1/2" />
-                    <div className="grid grid-cols-3 gap-3 mt-6">
-                      <div className="h-24 bg-accent rounded-lg" />
-                      <div className="h-24 bg-primary/10 rounded-lg" />
-                      <div className="h-24 bg-accent rounded-lg" />
+                  <div className="space-y-3 text-sm">
+                    <div className="flex items-center gap-3 p-3 bg-accent rounded-lg">
+                      <Eye size={18} className="text-primary" />
+                      <span className="font-semibold">Attract</span>
+                      <span className="ml-auto text-xs text-muted-foreground">Social Media</span>
                     </div>
-                    <div className="flex gap-3 mt-4">
-                      <div className="h-10 bg-primary rounded-lg flex-1" />
-                      <div className="h-10 bg-muted rounded-lg w-24" />
+                    <div className="flex justify-center">
+                      <ArrowRight size={16} className="text-primary/40 rotate-90" />
+                    </div>
+                    <div className="flex items-center gap-3 p-3 bg-primary/10 rounded-lg">
+                      <Target size={18} className="text-primary" />
+                      <span className="font-semibold">Convert</span>
+                      <span className="ml-auto text-xs text-muted-foreground">Website</span>
+                    </div>
+                    <div className="flex justify-center">
+                      <ArrowRight size={16} className="text-primary/40 rotate-90" />
+                    </div>
+                    <div className="flex items-center gap-3 p-3 bg-accent rounded-lg">
+                      <TrendingUp size={18} className="text-primary" />
+                      <span className="font-semibold">Grow</span>
+                      <span className="ml-auto text-xs text-muted-foreground">Revenue</span>
                     </div>
                   </div>
                 </div>
@@ -175,7 +216,7 @@ const Index = () => {
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                   className="absolute -top-4 -right-4 bg-card border border-border rounded-xl shadow-lg p-4 z-20"
                 >
-                  <div className="text-xs text-muted-foreground mb-1">Conversions</div>
+                  <div className="text-xs text-muted-foreground mb-1">Leads Generated</div>
                   <div className="text-2xl font-extrabold text-primary">+240%</div>
                 </motion.div>
                 <motion.div
@@ -183,8 +224,8 @@ const Index = () => {
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                   className="absolute -bottom-4 -left-4 bg-card border border-border rounded-xl shadow-lg p-4 z-20"
                 >
-                  <div className="text-xs text-muted-foreground mb-1">ROAS</div>
-                  <div className="text-2xl font-extrabold text-primary">5.2x</div>
+                  <div className="text-xs text-muted-foreground mb-1">Sales Growth</div>
+                  <div className="text-2xl font-extrabold text-primary">3x</div>
                 </motion.div>
               </div>
             </motion.div>
@@ -192,46 +233,28 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Overview */}
+      {/* How Our System Works */}
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
           <ScrollReveal>
-            <SectionHeading badge="What We Do" title="Services That Drive Growth" subtitle="From website design to paid advertising, we deliver end-to-end digital solutions that generate leads and revenue." />
+            <SectionHeading
+              badge="Our Approach"
+              title="Attract. Convert. Grow."
+              subtitle="A structured, three-part system designed to attract the right audience, convert opportunities into customers, and grow revenue predictably."
+            />
           </ScrollReveal>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {services.map((service, i) => (
-              <ScrollReveal key={i} delay={i * 0.05}>
-                <div className="group bg-card border border-border rounded-xl p-6 hover:shadow-lg hover:border-primary/30 transition-all duration-300 hover:-translate-y-1">
-                  <div className="w-12 h-12 rounded-lg bg-accent flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
-                    <service.icon size={24} />
-                  </div>
-                  <h3 className="text-lg font-bold mb-2">{service.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{service.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 4-Step Growth System */}
-      <section className="section-alt py-20 md:py-28">
-        <div className="container mx-auto px-4">
-          <ScrollReveal>
-            <SectionHeading badge="Our Process" title="Our 4-Step Growth System" subtitle="A proven framework that transforms your digital presence into a revenue engine." />
-          </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {growthSteps.map((step, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
                 <div className="relative text-center group">
                   {i < growthSteps.length - 1 && (
-                    <div className="hidden lg:block absolute top-8 left-[60%] w-[80%] h-px bg-border" />
+                    <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-px bg-border" />
                   )}
-                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300 relative z-10">
-                    <step.icon size={28} className="text-primary group-hover:text-primary-foreground transition-colors duration-300" />
+                  <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300 relative z-10">
+                    <step.icon size={32} className="text-primary group-hover:text-primary-foreground transition-colors duration-300" />
                   </div>
-                  <div className="text-xs font-bold text-primary mb-2 uppercase tracking-wider">Step {i + 1}</div>
-                  <h3 className="text-lg font-bold mb-2">{step.title}</h3>
+                  <div className="text-xs font-bold text-primary mb-2 uppercase tracking-wider">Step {step.step}</div>
+                  <h3 className="text-xl font-bold mb-3">{step.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed max-w-xs mx-auto">{step.desc}</p>
                 </div>
               </ScrollReveal>
@@ -240,18 +263,67 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Proven Results */}
+      {/* Packages */}
+      <section className="section-alt py-20 md:py-28">
+        <div className="container mx-auto px-4">
+          <ScrollReveal>
+            <SectionHeading
+              badge="System Tiers"
+              title="Choose the System That Fits Your Stage of Growth"
+              subtitle="Integrated marketing systems — structured to attract audiences, convert customers, and scale revenue with intention."
+            />
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {packages.map((pkg, i) => (
+              <ScrollReveal key={i} delay={i * 0.1}>
+                <div className={`bg-card border rounded-xl p-8 flex flex-col h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${pkg.highlight ? "border-primary shadow-lg ring-2 ring-primary/20" : "border-border"}`}>
+                  {pkg.highlight && (
+                    <span className="inline-block bg-primary text-primary-foreground text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-4 self-start">
+                      Most Popular
+                    </span>
+                  )}
+                  <h3 className="text-2xl font-extrabold mb-1">{pkg.name}</h3>
+                  <p className="text-primary text-sm font-semibold mb-3">{pkg.goal}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-6">{pkg.desc}</p>
+                  <ul className="space-y-3 mb-8 flex-1">
+                    {pkg.features.map((f, j) => (
+                      <li key={j} className="flex items-start gap-2 text-sm">
+                        <CheckCircle size={16} className="text-primary mt-0.5 flex-shrink-0" />
+                        <span>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button variant={pkg.highlight ? "cta" : "outline"} size="lg" asChild className="w-full text-base py-5">
+                    <a href="/contact">Get Started <ArrowRight size={16} /></a>
+                  </Button>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <p className="text-muted-foreground text-sm">Available as <span className="font-semibold text-foreground">3-month</span> or <span className="font-semibold text-foreground">6-month</span> engagements.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Results */}
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
           <ScrollReveal>
-            <SectionHeading badge="Proven Results" title="Numbers That Speak for Themselves" subtitle="Our data-driven approach consistently delivers measurable results for businesses worldwide." />
+            <SectionHeading
+              badge="Outcomes"
+              title="Measurable Results for Growing Businesses"
+              subtitle="We measure success by business outcomes — leads, customers, and revenue — not vanity metrics."
+            />
           </ScrollReveal>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {results.map((stat, i) => (
-              <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="text-center p-6 bg-card rounded-xl border border-border hover:shadow-lg hover:border-primary/20 transition-all duration-300">
-                  <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-                  <div className="text-muted-foreground text-sm font-medium mt-2">{stat.label}</div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {results.map((r, i) => (
+              <ScrollReveal key={i} delay={i * 0.08}>
+                <div className="flex items-start gap-4 bg-card border border-border rounded-xl p-6 hover:shadow-lg hover:border-primary/20 transition-all duration-300">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <r.icon size={22} className="text-primary" />
+                  </div>
+                  <p className="text-foreground font-medium leading-relaxed">{r.text}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -259,11 +331,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Why Brands Choose Us */}
+      {/* Why Choose Us */}
       <section className="section-alt py-20 md:py-28">
         <div className="container mx-auto px-4">
           <ScrollReveal>
-            <SectionHeading badge="Why Us" title="Why Brands Choose Brandleven" subtitle="We combine creative excellence with analytical rigor to deliver results that matter." />
+            <SectionHeading
+              badge="Why Brandleven"
+              title="A Strategic Partner for Integrated Growth"
+              subtitle="We design and manage complete marketing systems — combining strategy, execution, and optimization to deliver measurable business results."
+            />
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {whyUs.map((item, i) => (
@@ -285,7 +361,7 @@ const Index = () => {
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
           <ScrollReveal>
-            <SectionHeading badge="Testimonials" title="What Our Clients Say" subtitle="Don't just take our word for it — hear from businesses we've helped grow." />
+            <SectionHeading badge="Testimonials" title="Trusted by Founders Building Real Growth" subtitle="Business leaders who chose integrated strategy, structured execution, and measurable outcomes." />
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {testimonials.map((t, i) => (
@@ -316,10 +392,11 @@ const Index = () => {
           </ScrollReveal>
           <div className="space-y-4">
             {[
-              { q: "How long does it take to build a website?", a: "Most projects are delivered within 2-4 weeks, depending on complexity and scope." },
-              { q: "Do you work with businesses outside the UK?", a: "Absolutely! We operate fully remotely and serve clients worldwide." },
-              { q: "What kind of results can I expect from ads?", a: "Our clients typically see a 3-5x return on ad spend within the first 90 days." },
-              { q: "Do you offer ongoing support?", a: "Yes, we offer maintenance plans and ongoing optimization for both websites and ad campaigns." },
+              { q: "What makes Brandleven different from other agencies?", a: "Most agencies deliver isolated services — a website here, social media there. We design and manage integrated marketing systems that combine strategy, execution, and optimization to drive measurable business outcomes." },
+              { q: "How long does it take to see results?", a: "Most clients see meaningful improvements in reach, engagement, and lead generation within the first 30–60 days of system launch, with results compounding through ongoing optimization." },
+              { q: "Do you work with businesses outside the UK?", a: "Yes. We operate fully remotely and partner with growth-focused businesses worldwide." },
+              { q: "Which system tier is right for my business?", a: "It depends on your stage. The Basic System establishes your digital foundation, the Growth System attracts and engages your audience, and the Scale System is a fully managed engine for generating demand and driving revenue. We'll guide you to the right fit." },
+              { q: "Do you offer ongoing support?", a: "Yes — every system includes continuous optimization, available as 3-month or 6-month engagements so performance keeps improving over time." },
             ].map((faq, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
                 <details className="group bg-card border border-border rounded-xl hover:border-primary/20 transition-colors duration-300">

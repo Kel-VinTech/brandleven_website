@@ -9,7 +9,7 @@ const TikTokIcon = ({ size = 16 }: { size?: number }) => (
 const socialLinks = [
   { icon: Instagram, href: "https://www.instagram.com/brandleven?igsh=MWUyZGQ5ZmlzMmdndQ==", label: "Instagram" },
   { icon: Facebook, href: "https://facebook.com/brandleven", label: "Facebook" },
-  { icon: TikTokIcon, href: "#", label: "TikTok" },
+  { icon: TikTokIcon, href: "https://www.tiktok.com/@.brandleven?_r=1&_t=ZS-95eUG11dcyy", label: "TikTok" },
 ];
 
 const Footer = () => {
@@ -24,7 +24,7 @@ const Footer = () => {
               <span className="text-primary">Brandleven</span>
             </a>
             <p className="text-background/70 text-sm leading-relaxed">
-              We build high-converting websites and run data-driven ad campaigns that deliver measurable results.
+              We design and manage integrated digital marketing systems that help businesses attract, convert, and grow revenue.
             </p>
           </div>
 
@@ -47,14 +47,14 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold text-lg mb-4">Services</h4>
+            <h4 className="font-semibold text-lg mb-4">Our System</h4>
             <ul className="space-y-2 text-sm text-background/70">
-              <li>Website Development</li>
-              <li>E-commerce Design</li>
-              <li>Landing Pages</li>
-              <li>Facebook Ads</li>
-              <li>Instagram Ads</li>
-              <li>TikTok Marketing</li>
+              <li>Audience Growth & Engagement</li>
+              <li>Content Strategy & Planning</li>
+              <li>Conversion-Focused Web Experiences</li>
+              <li>Performance Optimization</li>
+              <li>Demand Generation Campaigns</li>
+              <li>Managed Marketing Systems</li>
             </ul>
           </div>
 
@@ -94,8 +94,14 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-background/10 mt-12 pt-8 text-center text-sm text-background/50">
-          © {new Date().getFullYear()} Brandleven. All rights reserved.
+        <div className="border-t border-background/10 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-background/50">
+          <p>© {new Date().getFullYear()} Brandleven. All rights reserved.</p>
+          <nav aria-label="Legal" className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+            <a href="/terms" className="hover:text-primary transition-colors">Terms & Conditions</a>
+            <a href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</a>
+            <a href="/refund" className="hover:text-primary transition-colors">Refund Policy</a>
+            <a href="/disclaimer" className="hover:text-primary transition-colors">Disclaimer</a>
+          </nav>
         </div>
       </div>
     </footer>
